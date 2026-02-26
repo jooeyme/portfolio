@@ -8,6 +8,7 @@ import { Contact } from './views/sections/Contact';
 import { FeaturedProjects } from './views/sections/FeaturedProjects';
 import { ModalDetail } from './views/components/ModalDetail';
 import { SplashScreen } from './views/components/SplashScreen';
+import ExperienceSection from './views/sections/ExperienceSection';
 
 function App() {
     const [loading, setLoading] = useState(true);
@@ -35,6 +36,8 @@ function App() {
                 <div id="projects" className="relative z-20 pl-4 md:pl-0 mb-24 -mt-20 md:-mt-32">
                     <FeaturedProjects />
                 </div>
+
+                <ExperienceSection />
 
                 <About id="about" />
 
