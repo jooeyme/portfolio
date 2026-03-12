@@ -2,10 +2,10 @@
 import { useState } from 'react';
 import { motion, useTransform, useMotionTemplate, useMotionValue, useMotionValueEvent, MotionValue } from 'framer-motion';
 import { Briefcase, Calendar, Building2, CheckCircle2 } from 'lucide-react';
-import { ExperienceData } from '@/data/experiences';
+import { Experience } from '@/data/portfolioData';
 
 interface ExperienceCardProps {
-    data: ExperienceData;
+    data: Experience;
     index: number;
     total: number;
     scrollYProgress: MotionValue<number>;

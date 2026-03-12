@@ -1,7 +1,6 @@
 "use client";
 import { motion, AnimatePresence } from 'framer-motion';
 import { useEffect, useState } from 'react';
-//import { ProjectData } from '@/data/projects';
 import { Project } from '@/data/portfolioData';
 import Image from 'next/image';
 import { Code2, Zap, Activity, Github, ExternalLink } from 'lucide-react';

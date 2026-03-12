@@ -1,7 +1,7 @@
 "use client";
 import { motion, useMotionTemplate, useMotionValue } from 'framer-motion';
 import { useRef, useState } from 'react';
-import { ContactItem } from '@/data/contactData';
+import { ContactItem } from '@/data/portfolioData'; 
 import { Check, ArrowUpRight } from 'lucide-react';
 
 interface ContactCardProps {

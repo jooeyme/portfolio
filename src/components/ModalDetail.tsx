@@ -1,6 +1,6 @@
 "use client";
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Play, Plus } from 'lucide-react';
+import { X } from 'lucide-react';
 import Image from 'next/image';
 import { Project } from '@/data/portfolioData';
 
