@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import "tailwindcss";
 
 export const metadata: Metadata = {
     icons: {
