@@ -61,7 +61,7 @@ export function NetflixCard({ project, onOpenModal }: NetflixCardProps) {
             layoutId={project.id.toString()}
         >
             <div
-                className="relative w-[150px] h-[60px] sm:w-[100px] sm:h-[50px] aspect-video w-full h-full"
+                className="relative sm:w-[100px] sm:h-[50px] aspect-video w-full h-full"
                 onClick={() => onOpenModal(project)}
             >
                 <Image
