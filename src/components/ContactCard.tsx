@@ -110,7 +110,7 @@ export function ContactCard({ contact, index }: ContactCardProps) {
                     </div>
                 </div>
 
-                <div className="relative z-20 flex-grow" style={{ transform: "translateZ(20px)" }}>
+                <div className="relative z-20 grow" style={{ transform: "translateZ(20px)" }}>
                     <h4 className="text-xl font-bold text-white mb-1 tracking-wide">{contact.title}</h4>
                     <p className="text-zinc-400 text-sm">{contact.description}</p>
                 </div>

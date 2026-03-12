@@ -13,7 +13,7 @@ export function About({ id }: AboutProps) {
 
             <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-12 mb-20">
                 <div className="relative">
-                    <div className="aspect-[3/4] rounded-lg overflow-hidden border-2 border-zinc-800 shadow-2xl relative">
+                    <div className="aspect-3/4 rounded-lg overflow-hidden border-2 border-zinc-800 shadow-2xl relative">
                         <Image
                             src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2787&auto=format&fit=crop"
                             alt={PROFILE.name}
@@ -67,7 +67,7 @@ export function About({ id }: AboutProps) {
                     <div className="space-y-8 pl-4 border-l border-zinc-800">
                         {EDUCATION.map((edu) => (
                             <div key={edu.id} className="relative pl-8 group">
-                                <span className="absolute -left-[1.25rem] top-2 w-2.5 h-2.5 rounded-full bg-red-600 ring-4 ring-[#141414]"></span>
+                                <span className="absolute -left-5 top-2 w-2.5 h-2.5 rounded-full bg-red-600 ring-4 ring-[#141414]"></span>
                                 <div className="flex justify-between items-start">
                                     <div>
                                         <h4 className="text-lg font-bold text-white">{edu.degree}</h4>
@@ -91,7 +91,7 @@ export function About({ id }: AboutProps) {
                     <div className="space-y-8 pl-4 border-l border-zinc-800">
                         {EXPERIENCE.map((exp) => (
                             <div key={exp.id} className="relative pl-8 group">
-                                <span className="absolute -left-[1.25rem] top-2 w-2.5 h-2.5 rounded-full bg-blue-600 ring-4 ring-[#141414]"></span>
+                                <span className="absolute -left-5 top-2 w-2.5 h-2.5 rounded-full bg-blue-600 ring-4 ring-[#141414]"></span>
                                 <div>
                                     <h4 className="text-lg font-bold text-white">{exp.role}</h4>
                                     <p className="text-gray-400">{exp.company}</p>

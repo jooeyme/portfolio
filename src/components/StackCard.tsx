@@ -89,7 +89,7 @@ export function StackCard({ domain, index }: StackCardProps) {
                     }}
                 />
 
-                <div className="relative z-20 flex-grow" style={{ transform: "translateZ(20px)" }}>
+                <div className="relative z-20 grow" style={{ transform: "translateZ(20px)" }}>
                     <h3 className="text-xl font-bold text-white mb-3 tracking-wide">{domain.category}</h3>
                     <p className="text-zinc-400 text-sm leading-relaxed mb-8">{domain.description}</p>
                 </div>

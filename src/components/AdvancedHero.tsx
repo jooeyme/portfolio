@@ -80,7 +80,7 @@ export function AdvancedHero({ featuredProject, onOpenModal }: AdvancedHeroProps
     if (!featuredProject) return null;
 
     return (
-        <div ref={containerRef} className="relative h-[100vh] w-full overflow-hidden bg-black selection:bg-cyan-500/30">
+        <div ref={containerRef} className="relative h-screen w-full overflow-hidden bg-black selection:bg-cyan-500/30">
             {/* Background Base */}
             <motion.div style={{ scale: bgScale }} className="absolute inset-0">
                 <Image
@@ -98,8 +98,8 @@ export function AdvancedHero({ featuredProject, onOpenModal }: AdvancedHeroProps
                 ></div>
 
                 {/* Darker Gradients for depth */}
-                <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/60 to-transparent z-0"></div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent z-0"></div>
+                <div className="absolute inset-0 bg-linear-to-r from-black/95 via-black/60 to-transparent z-0"></div>
+                <div className="absolute inset-0 bg-linear-to-t from-black via-black/20 to-transparent z-0"></div>
             </motion.div>
 
             {/* Radial Cursor Glow */}
@@ -176,7 +176,7 @@ export function AdvancedHero({ featuredProject, onOpenModal }: AdvancedHeroProps
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.5, duration: 0.8 }}
                     >
-                        <p className="text-2xl md:text-4xl text-zinc-300 font-medium mb-6 drop-shadow-md bg-clip-text text-transparent bg-gradient-to-r from-zinc-100 to-zinc-500">
+                        <p className="text-2xl md:text-4xl text-zinc-300 font-medium mb-6 drop-shadow-md bg-clip-text bg-linear-to-r from-zinc-100 to-zinc-500">
                             {PROFILE.title}
                         </p>
                         <p className="text-lg md:text-xl text-zinc-400 mb-10 max-w-2xl leading-relaxed font-light">

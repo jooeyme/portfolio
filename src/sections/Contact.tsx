@@ -8,7 +8,7 @@ interface ContactProps {
 export function Contact({ id }: ContactProps) {
     return (
         <section id={id} className="py-20 px-4 md:px-12 relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-red-900/10 to-transparent pointer-events-none"></div>
+            <div className="absolute top-0 left-0 w-full h-full bg-linear-to-t from-red-900/10 to-transparent pointer-events-none"></div>
 
             <div className="max-w-4xl mx-auto text-center mb-16 relative z-10">
                 <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">Let's Connect</h2>

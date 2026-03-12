@@ -94,7 +94,7 @@ export default function ExperienceCard({ data, index, total, scrollYProgress }: 
                     transformStyle: "preserve-3d",
                     pointerEvents: inView ? "auto" : "none",
                 }}
-                className="relative w-full max-w-5xl p-6 md:p-12 rounded-[2rem] bg-white/[0.03] backdrop-blur-3xl border border-white/10 shadow-2xl overflow-hidden group pointer-events-auto"
+                className="relative w-full max-w-5xl p-6 md:p-12 rounded-4xl bg-white/3 backdrop-blur-3xl border border-white/10 shadow-2xl overflow-hidden group pointer-events-auto"
             >
                 <motion.div
                     className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
@@ -170,7 +170,7 @@ export default function ExperienceCard({ data, index, total, scrollYProgress }: 
                             </ul>
                         </div>
 
-                        <div className="h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+                        <div className="h-px w-full bg-linear-to-r from-transparent via-white/10 to-transparent" />
 
                         <div>
                             <h4 className="text-lg font-semibold text-white/90 mb-4 flex items-center gap-2">

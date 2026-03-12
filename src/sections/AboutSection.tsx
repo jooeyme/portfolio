@@ -55,7 +55,7 @@ export function AboutSection() {
                         <h3 className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-[1.1] mb-8 tracking-tighter">
                             {ABOUT_ME.headline.split(' ').map((word, i) => (
                                 <span key={i} className="inline-block mr-3">
-                                    <span className="bg-clip-text text-transparent bg-gradient-to-br from-white via-zinc-300 to-zinc-600">
+                                    <span className="bg-clip-text text-transparent bg-linear-to-br from-white via-zinc-300 to-zinc-600">
                                         {word}
                                     </span>
                                 </span>
@@ -73,9 +73,9 @@ export function AboutSection() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, margin: "-10%" }}
                         transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-                        className="relative p-8 rounded-2xl bg-gradient-to-br from-zinc-900/80 to-black border border-white/5 backdrop-blur-xl overflow-hidden group"
+                        className="relative p-8 rounded-2xl bg-linear-to-br from-zinc-900/80 to-black border border-white/5 backdrop-blur-xl overflow-hidden group"
                     >
-                        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-transparent via-cyan-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                         <div className="flex items-start gap-4">
                             <div className="p-3 bg-cyan-500/10 rounded-xl text-cyan-400 mt-1">
                                 <Compass size={24} className="animate-[spin_4s_linear_infinite]" />

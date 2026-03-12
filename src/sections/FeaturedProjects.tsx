@@ -45,7 +45,7 @@ export function FeaturedProjects({ onOpenModal }: FeaturedProjectsProps) {
         <section className="relative w-full bg-black selection:bg-cyan-500/30 py-24 md:py-32 min-h-[120vh] flex flex-col items-center overflow-hidden">
             {/* Global Background Glow for the Section */}
             <div className="absolute inset-0 pointer-events-none z-0">
-                <div className="absolute inset-0 bg-gradient-to-b from-black via-zinc-950 to-black"></div>
+                <div className="absolute inset-0 bg-linear-to-b from-black via-zinc-950 to-black"></div>
                 {/* Noise Texture Overlay */}
                 <div
                     className="absolute inset-0 opacity-20 mix-blend-overlay"
@@ -55,10 +55,10 @@ export function FeaturedProjects({ onOpenModal }: FeaturedProjectsProps) {
 
             {/* Section Title */}
             <div className="relative z-10 text-center mb-16 md:mb-24 px-4 w-full">
-                <h2 className="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-zinc-100 to-zinc-500 tracking-tight">
+                <h2 className="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-linear-to-r from-zinc-100 to-zinc-500 tracking-tight">
                     Selected Works
                 </h2>
-                <div className="h-1 w-24 bg-gradient-to-r from-cyan-500 to-transparent mx-auto mt-4 rounded-full"></div>
+                <div className="h-1 w-24 bg-linear-to-r from-cyan-500 to-transparent mx-auto mt-4 rounded-full"></div>
             </div>
 
             {/* Stacked Container */}

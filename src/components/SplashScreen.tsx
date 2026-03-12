@@ -21,7 +21,7 @@ export function SplashScreen({ onFinish }: SplashScreenProps) {
         <AnimatePresence>
             {show && (
                 <motion.div
-                    className="fixed inset-0 z-[100] bg-black flex items-center justify-center overflow-hidden"
+                    className="fixed inset-0 z-100 bg-black flex items-center justify-center overflow-hidden"
                     exit={{ opacity: 0, transition: { duration: 0.5 } }}
                 >
                     <div className="relative">
@@ -37,7 +37,7 @@ export function SplashScreen({ onFinish }: SplashScreenProps) {
                             initial={{ width: 0 }}
                             animate={{ width: '100%' }}
                             transition={{ delay: 0.8, duration: 2.5, ease: "linear" }}
-                            className="h-1 bg-red-600 mt-4 mx-auto max-w-[300px]"
+                            className="h-1 bg-red-600 mt-4 mx-auto max-w-75"
                         />
                     </div>
                 </motion.div>

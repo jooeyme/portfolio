@@ -123,7 +123,7 @@ export function ProjectFolder({ project, index, visualIndex, mousePosition, onCl
             >
                 {/* Back Tab */}
                 <div
-                    className="w-48 md:w-64 h-10 md:h-12 bg-zinc-950 border-t border-x border-black rounded-t-xl -mb-[1px]"
+                    className="w-48 md:w-64 h-10 md:h-12 bg-zinc-950 border-t border-x border-black rounded-t-xl -mb-px"
                     style={{ marginLeft: `${tabOffset}px` }}
                 ></div>
                 {/* Back Body */}
@@ -142,7 +142,7 @@ export function ProjectFolder({ project, index, visualIndex, mousePosition, onCl
                     onMouseLeave={() => setIsHovered(false)}
                     animate={{ y: isHovered && !isActive ? -2 : 0 }}
                     transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                    className={`relative w-48 md:w-64 h-10 md:h-12 ${tabBg} border-t border-x ${tabBorder} rounded-t-xl z-20 -mb-[1px] transition-colors duration-500 flex items-center px-4 md:px-6 gap-3 pointer-events-auto ${!isActive ? 'cursor-pointer group' : ''}`}
+                    className={`relative w-48 md:w-64 h-10 md:h-12 ${tabBg} border-t border-x ${tabBorder} rounded-t-xl z-20 -mb-px transition-colors duration-500 flex items-center px-4 md:px-6 gap-3 pointer-events-auto ${!isActive ? 'cursor-pointer group' : ''}`}
                     style={{ marginLeft: `${tabOffset}px` }}
                 >
                     <Code2 className={`w-4 h-4 md:w-5 md:h-5 transition-colors duration-500 ${isActive || isHovered ? 'text-cyan-400' : 'text-zinc-400 group-hover:text-cyan-400'}`} />
@@ -150,7 +150,7 @@ export function ProjectFolder({ project, index, visualIndex, mousePosition, onCl
                         {project.title}
                     </span>
                     {isActive && (
-                        <div className="absolute top-0 right-0 w-8 h-full bg-gradient-to-l from-cyan-500/10 to-transparent pointer-events-none rounded-tr-xl"></div>
+                        <div className="absolute top-0 right-0 w-8 h-full bg-linear-to-l from-cyan-500/10 to-transparent pointer-events-none rounded-tr-xl"></div>
                     )}
                 </motion.div>
 
@@ -199,8 +199,8 @@ export function ProjectFolder({ project, index, visualIndex, mousePosition, onCl
                                 </p>
                             </div>
 
-                            <div className="relative flex-1 min-h-[160px] md:min-h-0 w-full rounded-xl overflow-hidden border border-zinc-800/80 group shadow-inner">
-                                <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-tr from-black/90 via-black/40 to-transparent z-10"></div>
+                            <div className="relative flex-1 min-h-40 md:min-h-0 w-full rounded-xl overflow-hidden border border-zinc-800/80 group shadow-inner">
+                                <div className="absolute inset-0 bg-linear-to-t md:bg-linear-to-tr from-black/90 via-black/40 to-transparent z-10"></div>
                                 <Image
                                     src={project.image}
                                     alt={project.title}
@@ -239,12 +239,12 @@ export function ProjectFolder({ project, index, visualIndex, mousePosition, onCl
                                 </div>
                             </div>
 
-                            <div className="h-px w-full bg-gradient-to-r from-zinc-800 via-zinc-800/50 to-transparent shrink-0"></div>
+                            <div className="h-px w-full bg-linear-to-r from-zinc-800 via-zinc-800/50 to-transparent shrink-0"></div>
 
                             {/* Problem & Solution */}
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 shrink-0">
                                 <div className="flex flex-col h-full bg-zinc-900/50 rounded-xl border border-zinc-800/50 p-4 md:p-5 relative overflow-hidden group">
-                                    <span className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-red-500/20 to-transparent transform -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></span>
+                                    <span className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-red-500/20 to-transparent transform -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></span>
                                     <h3 className="text-xs uppercase tracking-widest text-zinc-500 font-bold mb-2">The Challenge</h3>
                                     <p className="text-zinc-400 text-xs md:text-sm leading-relaxed">
                                         {project.problem}
@@ -252,7 +252,7 @@ export function ProjectFolder({ project, index, visualIndex, mousePosition, onCl
                                 </div>
 
                                 <div className="flex flex-col h-full bg-cyan-950/20 rounded-xl border border-cyan-900/30 p-4 md:p-5 relative overflow-hidden group">
-                                    <span className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent transform translate-x-full group-hover:-translate-x-full transition-transform duration-1000"></span>
+                                    <span className="absolute inset-x-0 bottom-0 h-px bg-linear-to-r from-transparent via-cyan-500/30 to-transparent transform translate-x-full group-hover:-translate-x-full transition-transform duration-1000"></span>
                                     <h3 className="text-xs uppercase tracking-widest text-cyan-500/80 font-bold mb-2">The Solution</h3>
                                     <p className="text-cyan-100/80 text-xs md:text-sm leading-relaxed">
                                         {project.solution}
@@ -262,8 +262,8 @@ export function ProjectFolder({ project, index, visualIndex, mousePosition, onCl
 
                             {/* Impact & Links */}
                             <div className="mt-auto flex flex-col gap-4 shrink-0">
-                                <div className="flex items-center gap-3 p-4 rounded-xl bg-gradient-to-r from-zinc-800/50 to-transparent border-l-2 border-cyan-500">
-                                    <div className="p-2 rounded-full bg-cyan-500/10 flex-shrink-0">
+                                <div className="flex items-center gap-3 p-4 rounded-xl bg-linear-to-r from-zinc-800/50 to-transparent border-l-2 border-cyan-500">
+                                    <div className="p-2 rounded-full bg-cyan-500/10 shrink-0">
                                         <Activity className="w-5 h-5 text-cyan-400" />
                                     </div>
                                     <div>
@@ -279,7 +279,7 @@ export function ProjectFolder({ project, index, visualIndex, mousePosition, onCl
                                             onClick={() => onOpenModal(project)}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="flex-1 min-w-[120px] flex items-center justify-center gap-2 bg-cyan-500 hover:bg-cyan-400 text-black px-4 py-2.5 rounded-lg font-bold text-sm transition-all hover:scale-[1.02] active:scale-95 pointer-events-auto"
+                                            className="flex-1 min-w-30 flex items-center justify-center gap-2 bg-cyan-500 hover:bg-cyan-400 text-black px-4 py-2.5 rounded-lg font-bold text-sm transition-all hover:scale-[1.02] active:scale-95 pointer-events-auto"
                                         >
                                             <ExternalLink className="w-4 h-4" />
                                             Live Demo
@@ -290,7 +290,7 @@ export function ProjectFolder({ project, index, visualIndex, mousePosition, onCl
                                             href={project.githubUrl}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="flex-1 min-w-[120px] flex items-center justify-center gap-2 bg-zinc-800 hover:bg-zinc-700 text-white border border-zinc-700 px-4 py-2.5 rounded-lg font-medium text-sm transition-all hover:scale-[1.02] active:scale-95 pointer-events-auto shadow-md"
+                                            className="flex-1 min-w-30 flex items-center justify-center gap-2 bg-zinc-800 hover:bg-zinc-700 text-white border border-zinc-700 px-4 py-2.5 rounded-lg font-medium text-sm transition-all hover:scale-[1.02] active:scale-95 pointer-events-auto shadow-md"
                                         >
                                             <Github className="w-4 h-4" />
                                             Source

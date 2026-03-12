@@ -26,7 +26,7 @@ export function NetflixRow({ title, projects, onOpenModal }: NetflixRowProps) {
     };
 
     return (
-        <div className="mb-4 md:mb-8 space-y-2 md:space-y-4 px-4 sm:px-8 md:px-12 group/row relative z-0 hover:z-[99] transition-all duration-300">
+        <div className="mb-4 md:mb-8 space-y-2 md:space-y-4 px-4 sm:px-8 md:px-12 group/row relative z-0 hover:z-99 transition-all duration-300">
             <h2 className="w-56 cursor-pointer text-sm font-semibold text-[#e5e5e5] transition duration-200 hover:text-white md:text-xl lg:text-2xl relative z-20">
                 {title}
             </h2>

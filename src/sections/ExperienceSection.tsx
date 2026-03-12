@@ -56,7 +56,7 @@ export default function ExperienceSection() {
                 </div>
 
                 <div
-                    className="relative w-full h-full max-h-[800px] mt-24 md:mt-0 flex items-center justify-center pointer-events-none"
+                    className="relative w-full h-full max-h-200 mt-24 md:mt-0 flex items-center justify-center pointer-events-none"
                     style={{ perspective: "2000px" }}
                 >
                     {EXPERIENCE.map((exp, index) => (
