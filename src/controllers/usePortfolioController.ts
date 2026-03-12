@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { PROJECTS, Project } from '../models/portfolioData';
+import { PROJECTS, Project } from '@/data/portfolioData';
 
 export function usePortfolioController() {
     const [selectedProject, setSelectedProject] = useState<Project | null>(null);
