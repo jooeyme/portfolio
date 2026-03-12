@@ -29,7 +29,7 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true,
+    "noUncheckedSideEffectImports": false,
     "jsx": "react-jsx",
     "allowJs": true,
     "incremental": true,
