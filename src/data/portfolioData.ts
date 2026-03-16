@@ -15,7 +15,7 @@ export interface Profile {
 }
 
 export const PROFILE: Profile = {
-    name: "Tejo Mulyono",
+    name: "Tejoo",
     title: "Fullstack Web Developer",
     description: "Building scalable web applications with a focus on seamless user experiences. Specializing in React, Node.js, and Cloud Infrastructure.",
     socials: {
@@ -51,6 +51,12 @@ export interface Project {
     impact: string;
     color: string;
     githubUrl: string;
+    // New Case Study Fields
+    overview: string;
+    scope: { users?: string; endpoints?: string; tables?: string; roles?: string;[key: string]: string | undefined };
+    responsibilities: string[];
+    technicalDecisions: { title: string; description: string }[];
+    lessonsLearned: string;
 }
 
 export const PROJECTS: Project[] = [
@@ -71,6 +77,21 @@ export const PROJECTS: Project[] = [
         problem: "Pencarian dokumen menggunakan query database biasa menjadi lambat ketika jumlah arsip semakin banyak.",
         solution: "Mengintegrasikan Elasticsearch untuk melakukan indexing dokumen sehingga pencarian dapat dilakukan menggunakan full-text search dan advanced filtering.",
         impact: "Mempercepat proses pencarian dokumen dan meningkatkan efisiensi pengelolaan arsip.",
+        overview: "SIMANHUT is a comprehensive digital archiving system built for a university forestry department. It digitizes physical documents and provides a blazing-fast centralized search engine to retrieve historical archives instantaneously.",
+        scope: { users: "500+", endpoints: "40+", tables: "15", roles: "Super Admin, Staff, Viewer" },
+        responsibilities: [
+            "Architected the relational database schema for document metadata.",
+            "Built secure REST APIs using Node.js and Express.",
+            "Integrated Elasticsearch for full-text indexing.",
+            "Implemented role-based access control (RBAC)."
+        ],
+        technicalDecisions: [
+            {
+                title: "Elasticsearch over SQL LIKE %",
+                description: "Chosen to handle full-text search across thousands of documents efficiently. Standard SQL LIKE queries would result in full table scans and unacceptable latency at scale."
+            }
+        ],
+        lessonsLearned: "Learned the intricacies of index synchronization between a primary relational database and a secondary NoSQL search engine, ensuring eventual consistency without dragging down the main API response times."
     },
     {
         id: 2,
@@ -89,6 +110,20 @@ export const PROJECTS: Project[] = [
         problem: "Proses peminjaman fasilitas dilakukan secara manual sehingga sering terjadi konflik jadwal dan sulit memantau status peminjaman.",
         solution: "Membangun sistem reservasi dengan RESTful API, autentikasi JWT, dan role-based access control untuk mengelola hak akses mahasiswa dan administrator.",
         impact: "Proses reservasi menjadi lebih terorganisir dan transparan bagi pengguna maupun administrator.",
+        overview: "A facility reservation platform designed to streamline campus resource allocation. The system manages room bookings, equipment rentals, and enforces complex scheduling rules with a multi-tier approval workflow.",
+        scope: { users: "20,000+", tables: "25", roles: "Student, Lecturer, Facility Admin" },
+        responsibilities: [
+            "Developed the frontend reservation interface using React.",
+            "Implemented real-time WebSocket notifications for approval status updates.",
+            "Designed the scheduling conflict-resolution algorithm in the backend."
+        ],
+        technicalDecisions: [
+            {
+                title: "Socket.io for Real-time Updates",
+                description: "Used WebSockets instead of HTTP polling to immediately notify students when their urgent facility requests are approved or rejected by administrators."
+            }
+        ],
+        lessonsLearned: "Handling time-zones and date-math accurately is surprisingly complex. Adopting a strict UTC-only policy in the database and enforcing client-side localization resolved many edge cases involving overlapping booking slots."
     },
     {
         id: 3,
@@ -107,6 +142,20 @@ export const PROJECTS: Project[] = [
         problem: "Pencari kerja sering kesulitan mengelola banyak lamaran pekerjaan dan melacak tahap rekrutmen yang berbeda.",
         solution: "Menyediakan dashboard untuk mencatat lamaran, memperbarui status proses, serta menyimpan catatan interview.",
         impact: "Mempermudah pengguna dalam memantau dan mengelola proses pencarian kerja secara lebih terstruktur.",
+        overview: "JobHunter is a personal career CRM. It allows job seekers to meticulously track applications across multiple platforms, organize interview notes, and visualize their overall applying funnel through a unified dashboard.",
+        scope: { users: "Open Registration", endpoints: "25+", tables: "8" },
+        responsibilities: [
+            "Designed and built the entire application end-to-end as a solo project.",
+            "Containerized the application using Docker for consistent local development and production deployments.",
+            "Created responsive React kanban boards for application stage tracking."
+        ],
+        technicalDecisions: [
+            {
+                title: "Docker Containerization",
+                description: "Containerized the Node.js backend and Postgres database to ensure that local development environments perfectly mirrored the production VPS, eliminating 'it works on my machine' issues."
+            }
+        ],
+        lessonsLearned: "UI/UX plays a massive role in user retention for productivity tools. Implementing drag-and-drop mechanics (Kanban) significantly improved the user experience compared to traditional form-based status updates."
     },
 ];
 

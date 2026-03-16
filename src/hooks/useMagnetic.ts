@@ -1,8 +1,8 @@
 import { useRef, useState, useEffect } from 'react';
 import { useSpring } from 'framer-motion';
 
-export function useMagnetic(stiffness = 150, damping = 15, mass = 0.1) {
-    const ref = useRef<HTMLButtonElement>(null);
+export function useMagnetic<T extends HTMLElement = any>(stiffness = 150, damping = 15, mass = 0.1) {
+    const ref = useRef<T>(null);
     const [isHovered, setIsHovered] = useState(false);
 
     const x = useSpring(0, { stiffness, damping, mass });

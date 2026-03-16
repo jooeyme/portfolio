@@ -33,7 +33,7 @@ export default function ExperienceSection() {
                     style={{ background }}
                 />
 
-                <div className="absolute top-12 md:top-24 left-0 right-0 z-50 text-center px-4 pointer-events-none">
+                <div className="absolute top-12 md:top-24 left-0 right-0 z-50 text-center px-4 pb-32 pointer-events-none">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}

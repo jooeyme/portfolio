@@ -28,8 +28,6 @@ export default function ExperienceCard({ data, index, total, scrollYProgress }: 
     const y = useTransform(scrollYProgress, ranges, ["100%", "60%", "0%", "0%", "-5%", "-15%"]);
     const scale = useTransform(scrollYProgress, ranges, [0.8, 0.85, 1, 1, 0.9, 0.8]);
     const opacity = useTransform(scrollYProgress, ranges, [0, 1, 1, 1, 1, 0]);
-    //const blurValue = useTransform(scrollYProgress, ranges, [20, 10, 0, 0, 10, 20]);
-    //const filter = useMotionTemplate`blur(${blurValue}px)`;
 
     const [inView, setInView] = useState(false);
 

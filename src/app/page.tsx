@@ -32,7 +32,7 @@ export default function Home() {
     return (
         <div className="bg-black min-h-screen text-white overflow-clip font-sans">
             <Navbar />
-            <Hero featuredProject={featuredProject} onOpenModal={openModal} />
+            <Hero featuredProject={featuredProject} />
             <main className="relative z-10 w-full overflow-visible">
                 <div id="projects" className="relative z-20 pl-4 md:pl-0 mb-24 -mt-20 md:-mt-32">
                     <FeaturedProjects onOpenModal={openModal} />

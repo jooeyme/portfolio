@@ -46,15 +46,15 @@ export function ProjectFolder({ project, index, visualIndex, mousePosition, onCl
         opacityVal = 1;
     } else if (visualIndex === 1) {
         scaleVal = 0.95;
-        yVal = isMobile ? -10 : -80; // Negative to move UP and show top edge
-        zVal = isMobile ? 0 : -60;
-        rotateXCustom = isMobile ? 0 : 6;
+        yVal = isMobile ? -10 : -40; // Negative to move UP and show top edge
+        zVal = isMobile ? 0 : 0;
+        rotateXCustom = isMobile ? 0 : 0;
         opacityVal = isMobile ? 0.95 : 0.8;
     } else {
         scaleVal = 0.9;
-        yVal = isMobile ? -40 : -180; // Negative to move UP further
-        zVal = isMobile ? 0 : -120;
-        rotateXCustom = isMobile ? 0 : 12;
+        yVal = isMobile ? -40 : -90; // Negative to move UP further
+        zVal = isMobile ? 0 : 0;
+        rotateXCustom = isMobile ? 0 : 0;
         opacityVal = isMobile ? 0.95 : 0.8;
     }
 
@@ -282,7 +282,7 @@ export function ProjectFolder({ project, index, visualIndex, mousePosition, onCl
                                             className="flex-1 min-w-30 flex items-center justify-center gap-2 bg-cyan-500 hover:bg-cyan-400 text-black px-4 py-2.5 rounded-lg font-bold text-sm transition-all hover:scale-[1.02] active:scale-95 pointer-events-auto"
                                         >
                                             <ExternalLink className="w-4 h-4" />
-                                            Live Demo
+                                            Case Study
                                         </a>
                                     )}
                                     {project.githubUrl && (

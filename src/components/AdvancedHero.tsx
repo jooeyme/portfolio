@@ -2,7 +2,7 @@
 import { motion, useScroll, useTransform, useMotionValue, useSpring } from 'framer-motion';
 import { useRef, useEffect } from 'react';
 import Image from 'next/image';
-import { Play, Info } from 'lucide-react';
+import { Download, Info } from 'lucide-react';
 import {
     SiReact, SiTypescript, SiTailwindcss, SiVite, SiFramer,
     SiJavascript, SiHtml5, SiCss3, SiGit, SiGithub, SiNextdotjs
@@ -33,10 +33,9 @@ const PARTICLES = generateParticles(35);
 
 interface AdvancedHeroProps {
     featuredProject: Project | null;
-    onOpenModal: (project: Project) => void;
 }
 
-export function AdvancedHero({ featuredProject, onOpenModal }: AdvancedHeroProps) {
+export function AdvancedHero({ featuredProject }: AdvancedHeroProps) {
     const containerRef = useRef<HTMLDivElement>(null);
     const mouseX = useMotionValue(typeof window !== 'undefined' ? window.innerWidth / 2 : 0);
     const mouseY = useMotionValue(typeof window !== 'undefined' ? window.innerHeight / 2 : 0);
@@ -190,23 +189,25 @@ export function AdvancedHero({ featuredProject, onOpenModal }: AdvancedHeroProps
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.7, duration: 0.5 }}
                     >
-                        <motion.button
+                        <motion.a
+                            href="/Tejo Mulyono-resume.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             ref={playMagnetic.ref}
                             style={{ x: playMagnetic.x, y: playMagnetic.y }}
-                            onClick={() => onOpenModal(featuredProject)}
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                             className="group relative flex items-center justify-center gap-3 bg-white text-black px-8 py-4 md:px-10 md:py-5 rounded-full font-bold transition-colors text-lg md:text-xl overflow-hidden"
                         >
                             <span className="absolute inset-0 w-full h-full bg-cyan-200 opacity-0 group-hover:opacity-100 transition-opacity"></span>
-                            <Play className="relative fill-black w-6 h-6 group-hover:scale-110 transition-transform" />
-                            <span className="relative z-10 w-max">View Resume</span>
-                        </motion.button>
+                            <Download className="relative text-black w-6 h-6 group-hover:scale-110 transition-transform" />
+                            <span className="relative z-10 w-max">Unduh Resume/CV</span>
+                        </motion.a>
 
                         <motion.button
                             ref={infoMagnetic.ref}
                             style={{ x: infoMagnetic.x, y: infoMagnetic.y }}
-                            onClick={() => onOpenModal(featuredProject)}
+                            onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                             className="group flex items-center justify-center gap-3 bg-white/5 border border-white/10 text-white px-8 py-4 md:px-10 md:py-5 rounded-full font-bold hover:bg-white/10 transition-colors text-lg md:text-xl backdrop-blur-md"
