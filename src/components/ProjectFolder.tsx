@@ -103,7 +103,7 @@ export function ProjectFolder({ project, index, visualIndex, mousePosition, onCl
                 damping: 25,
                 mass: 0.8
             }}
-            className={`absolute top-0 w-[96%] md:w-[90%] left-0 right-0 mx-auto h-auto flex flex-col md:origin-bottom origin-top will-change-transform pointer-events-none ${!isActive ? 'drop-shadow-[0_-10px_30px_rgba(0,0,0,0.5)]' : ''}`}
+            className={`absolute top-0 w-[96%] md:w-[90%] left-0 right-0 mx-auto h-full flex flex-col md:origin-bottom origin-top will-change-transform pointer-events-none ${!isActive ? 'drop-shadow-[0_-10px_30px_rgba(0,0,0,0.5)]' : ''}`}
             style={{
                 x: cardParallaxX,
                 y: yVal + cardParallaxY, // Minor y-parallax adjustment applied inline separate from animate 'y'
@@ -186,10 +186,10 @@ export function ProjectFolder({ project, index, visualIndex, mousePosition, onCl
                     )}
 
                     {/* Inner Content Wrapper */}
-                    <div className={`relative z-20 w-full h-full flex flex-col md:flex-row p-6 md:p-8 lg:p-10 gap-6 lg:gap-10 ${!isActive ? 'opacity-40 transition-opacity duration-500 select-none' : ''}`}>
+                    <div className={`relative z-20 w-full h-full flex flex-col md:flex-row p-6 md:p-8 lg:p-10 gap-6 lg:gap-10 overflow-y-auto md:overflow-y-hidden custom-scrollbar ${!isActive ? 'opacity-40 transition-opacity duration-500 select-none' : ''}`}>
 
                         {/* Left Column: Image & Basic Info */}
-                        <div className="w-full md:w-5/12 flex flex-col gap-6 h-full shrink-0">
+                        <div className="w-full md:w-5/12 flex flex-col gap-6 h-auto md:h-full shrink-0">
                             <div>
                                 <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white mb-3 md:mb-4 tracking-tight leading-tight line-clamp-2 drop-shadow-sm">
                                     {project.title}
@@ -215,7 +215,7 @@ export function ProjectFolder({ project, index, visualIndex, mousePosition, onCl
                         </div>
 
                         {/* Right Column: Deep Dive */}
-                        <div className="w-full md:w-7/12 flex flex-col gap-6 md:gap-8 h-full overflow-y-auto md:overflow-y-auto pr-2 custom-scrollbar pb-4">
+                        <div className="w-full md:w-7/12 flex flex-col gap-6 md:gap-8 h-auto md:h-full overflow-y-visible md:overflow-y-auto pr-2 custom-scrollbar pb-4">
 
                             {/* Tech Stack */}
                             <div>

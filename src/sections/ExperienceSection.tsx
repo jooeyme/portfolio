@@ -1,11 +1,20 @@
 "use client";
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform, useMotionTemplate } from 'framer-motion';
 import { EXPERIENCE } from '@/data/portfolioData';
 import ExperienceCard from '@/components/ExperienceCard';
 
 export default function ExperienceSection() {
     const containerRef = useRef<HTMLDivElement>(null);
+
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => setIsMobile(window.innerWidth < 768);
+        checkMobile();
+        window.addEventListener("resize", checkMobile);
+        return () => window.removeEventListener("resize", checkMobile);
+    }, []);
 
     const { scrollYProgress } = useScroll({
         target: containerRef,
@@ -20,20 +29,20 @@ export default function ExperienceSection() {
     const background = useMotionTemplate`radial-gradient(1200px circle at 50% 50%, ${backgroundColor}15, transparent 80%)`;
 
     return (
-        <section
-            ref={containerRef}
-            className="relative w-full bg-[#030014]"
-            style={{ height: `${EXPERIENCE.length * 120}vh` }}
-            id="experience"
-        >
-            <div className="sticky top-0 h-screen w-full flex flex-col items-center justify-center overflow-hidden">
+            <section
+                ref={containerRef}
+                className="relative w-full bg-[#030014]"
+                style={{ height: isMobile ? "auto" : `${EXPERIENCE.length * 120}vh` }}
+                id="experience"
+            >
+                <div className={`w-full flex flex-col items-center justify-start overflow-hidden ${isMobile ? 'pt-20 pb-12' : 'sticky top-0 h-screen pt-24 pb-12'}`}>
 
                 <motion.div
                     className="absolute inset-0 transition-opacity duration-1000 opacity-60 pointer-events-none"
                     style={{ background }}
                 />
 
-                <div className="absolute top-12 md:top-24 left-0 right-0 z-50 text-center px-4 pb-32 pointer-events-none">
+                <div className="relative z-50 text-center px-4 pt-20 md:pt-24 pb-8 md:pb-12 shrink-0 w-full pointer-events-none">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -56,7 +65,7 @@ export default function ExperienceSection() {
                 </div>
 
                 <div
-                    className="relative w-full h-full max-h-200 mt-24 md:mt-0 flex items-center justify-center pointer-events-none"
+                    className={`relative w-full flex pointer-events-none pb-8 ${isMobile ? 'flex-col gap-10 px-4 mt-8 items-center justify-center' : 'flex-1 min-h-0 md:max-h-200 items-center justify-center'}`}
                     style={{ perspective: "2000px" }}
                 >
                     {EXPERIENCE.map((exp, index) => (
@@ -66,6 +75,7 @@ export default function ExperienceSection() {
                             index={index}
                             total={EXPERIENCE.length}
                             scrollYProgress={scrollYProgress}
+                            isMobile={isMobile}
                         />
                     ))}
                 </div>

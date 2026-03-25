@@ -9,9 +9,10 @@ interface ExperienceCardProps {
     index: number;
     total: number;
     scrollYProgress: MotionValue<number>;
+    isMobile?: boolean;
 }
 
-export default function ExperienceCard({ data, index, total, scrollYProgress }: ExperienceCardProps) {
+export default function ExperienceCard({ data, index, total, scrollYProgress, isMobile = false }: ExperienceCardProps) {
     const step = total > 1 ? 1 / (total - 1) : 1;
     const center = index * step;
 
@@ -73,7 +74,7 @@ export default function ExperienceCard({ data, index, total, scrollYProgress }: 
 
     return (
         <motion.div
-            style={{
+            style={isMobile ? {} : {
                 y,
                 scale,
                 opacity,
@@ -81,18 +82,18 @@ export default function ExperienceCard({ data, index, total, scrollYProgress }: 
                 zIndex: index, // Higher index means it's on top of previous cards
 
             }}
-            className="absolute inset-0 flex items-center justify-center p-4 md:p-8 pointer-events-none"
+            className={isMobile ? "relative w-full flex flex-col items-center justify-center pointer-events-auto" : "absolute inset-0 flex items-center justify-center p-4 md:p-8 pointer-events-none"}
         >
             <motion.div
-                onMouseMove={handleMouseMove}
-                onMouseLeave={handleMouseLeave}
+                onMouseMove={isMobile ? undefined : handleMouseMove}
+                onMouseLeave={isMobile ? undefined : handleMouseLeave}
                 style={{
-                    rotateX,
-                    rotateY,
+                    rotateX: isMobile ? 0 : rotateX,
+                    rotateY: isMobile ? 0 : rotateY,
                     transformStyle: "preserve-3d",
-                    pointerEvents: inView ? "auto" : "none",
+                    pointerEvents: isMobile ? "auto" : (inView ? "auto" : "none"),
                 }}
-                className="relative w-full max-w-5xl p-6 md:p-12 rounded-4xl bg-white/3 backdrop-blur-3xl border border-white/10 shadow-2xl overflow-hidden group pointer-events-auto"
+                className={`relative w-full max-w-5xl rounded-4xl bg-white/3 backdrop-blur-3xl border border-white/10 shadow-2xl overflow-hidden group pointer-events-auto ${isMobile ? 'p-6' : 'p-6 md:p-12'}`}
             >
                 <motion.div
                     className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
@@ -131,12 +132,12 @@ export default function ExperienceCard({ data, index, total, scrollYProgress }: 
                     {/* Right Column */}
                     <motion.div
                         initial="hidden"
-                        animate={inView ? "show" : "hidden"}
+                        animate={isMobile ? "show" : (inView ? "show" : "hidden")}
                         variants={{
                             hidden: { opacity: 0 },
                             show: {
                                 opacity: 1,
-                                transition: { staggerChildren: 0.1 }
+                                transition: { staggerChildren: isMobile ? 0 : 0.1 }
                             }
                         }}
                         className="lg:col-span-7 space-y-8"
