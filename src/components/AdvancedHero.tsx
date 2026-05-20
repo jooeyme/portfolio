@@ -1,7 +1,6 @@
 "use client";
 import { motion, useScroll, useTransform, useMotionValue, useSpring } from 'framer-motion';
 import { useRef, useEffect } from 'react';
-import Image from 'next/image';
 import { Download, Info } from 'lucide-react';
 import {
     SiReact, SiTypescript, SiTailwindcss, SiVite, SiFramer,
@@ -82,13 +81,6 @@ export function AdvancedHero({ featuredProject }: AdvancedHeroProps) {
         <div ref={containerRef} className="relative h-screen w-full overflow-hidden bg-black selection:bg-cyan-500/30">
             {/* Background Base */}
             <motion.div style={{ scale: bgScale }} className="absolute inset-0">
-                {/* <Image
-                    src={featuredProject.image}
-                    alt="Hero Background"
-                    fill
-                    priority
-                    className="object-cover brightness-[0.25]"
-                /> */}
 
                 {/* Advanced Noise Texture Overlay */}
                 <div
