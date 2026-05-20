@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { Project } from '@/data/portfolioData';
 import Image from 'next/image';
-import { Code2, Zap, Activity, Github, ExternalLink } from 'lucide-react';
+import { Code2, Zap, Activity, ExternalLink } from 'lucide-react';
 
 interface ProjectFolderProps {
     project: Project;
@@ -283,17 +283,6 @@ export function ProjectFolder({ project, index, visualIndex, mousePosition, onCl
                                         >
                                             <ExternalLink className="w-4 h-4" />
                                             Case Study
-                                        </a>
-                                    )}
-                                    {project.githubUrl && (
-                                        <a
-                                            href={project.githubUrl}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="flex-1 min-w-30 flex items-center justify-center gap-2 bg-zinc-800 hover:bg-zinc-700 text-white border border-zinc-700 px-4 py-2.5 rounded-lg font-medium text-sm transition-all hover:scale-[1.02] active:scale-95 pointer-events-auto shadow-md"
-                                        >
-                                            <Github className="w-4 h-4" />
-                                            Source
                                         </a>
                                     )}
                                 </div>
