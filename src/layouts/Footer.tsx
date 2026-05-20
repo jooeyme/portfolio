@@ -19,7 +19,7 @@ export function Footer() {
 
                 <div className="flex flex-col items-center md:items-end gap-2">
                     <p>© {new Date().getFullYear()} {PROFILE.name}. All rights reserved.</p>
-                    <p className="text-xs text-gray-600">Built with React, Vite & Tailwind CSS</p>
+                    <p className="text-xs text-gray-600">Built with Next.js  & Tailwind CSS</p>
                 </div>
             </div>
         </footer>

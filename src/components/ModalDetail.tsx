@@ -1,6 +1,7 @@
 "use client";
+import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, ExternalLink, Github, Database, Users, Shield, Server, Terminal, Settings } from 'lucide-react';
+import { X, ExternalLink, Monitor, ChevronDown, Github, Database, Users, Shield, Server, Terminal, Settings } from 'lucide-react';
 import Image from 'next/image';
 import { Project } from '@/data/portfolioData';
 
@@ -11,6 +12,20 @@ interface ModalDetailProps {
 
 export function ModalDetail({ project, onClose }: ModalDetailProps) {
     if (!project) return null;
+
+    const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
+  
+  // Menentukan tipe ref khusus untuk elemen HTMLDivElement
+  const dropdownRef = useRef<HTMLDivElement>(null);
+    useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsDropdownOpen(false);
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
     return (
         <AnimatePresence>
@@ -73,18 +88,68 @@ export function ModalDetail({ project, onClose }: ModalDetailProps) {
                             </div>
 
                             <div className="flex gap-4 w-full md:w-auto mt-4 md:mt-0">
-                                {project.id && (
-                                    <a href="#" target="_blank" rel="noopener noreferrer" className="flex-1 md:flex-none flex items-center justify-center gap-2 bg-cyan-500 hover:bg-cyan-400 text-black px-5 py-2.5 rounded-lg font-bold text-sm transition-all">
-                                        <ExternalLink className="w-4 h-4" />
-                                        Live Demo
-                                    </a>
-                                )}
-                                {project.githubUrl && (
+                                {/* {project.githubUrl && (
                                     <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="flex-1 md:flex-none flex items-center justify-center gap-2 bg-zinc-800 hover:bg-zinc-700 text-white border border-zinc-700 px-5 py-2.5 rounded-lg font-medium text-sm transition-all shadow-md">
                                         <Github className="w-4 h-4" />
                                         Source
                                     </a>
-                                )}
+                                )} */}
+                                {(project.githubUrlFrontend || project.githubUrlBackend) && (
+        <div className="relative w-full md:w-auto text-left" ref={dropdownRef}>
+          
+          {/* Tombol Utama */}
+          <button
+            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+            type="button"
+            className="w-full md:w-auto flex items-center justify-center gap-2 bg-zinc-800 hover:bg-zinc-700 text-white border border-zinc-700 px-5 py-2.5 rounded-lg font-medium text-sm transition-all shadow-md focus:outline-none focus:ring-2 focus:ring-zinc-600"
+          >
+            <Github className="w-4 h-4" />
+            <span>Source Code</span>
+            <ChevronDown 
+              className={`w-4 h-4 text-zinc-400 transition-transform duration-200 ${
+                isDropdownOpen ? 'rotate-180' : ''
+              }`} 
+            />
+          </button>
+
+          {/* Menu Dropdown */}
+          {isDropdownOpen && (
+            <div className="absolute right-0 left-0 md:left-auto z-10 w-full md:w-52 mt-2 origin-top-right bg-zinc-900 border border-zinc-800 rounded-xl shadow-xl ring-1 ring-black ring-opacity-5 divide-y divide-zinc-800 focus:outline-none animate-in fade-in slide-in-from-top-1 duration-150">
+              
+              {/* Pilihan Frontend */}
+              {project.githubUrlFrontend && (
+                <div className="py-1">
+                  <a
+                    href={project.githubUrlFrontend}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex items-center gap-2.5 px-4 py-2.5 text-sm text-zinc-300 hover:bg-zinc-800 hover:text-white transition-colors"
+                  >
+                    <Monitor className="w-3.5 h-3.5 text-zinc-500 group-hover:text-blue-400 transition-colors" />
+                    <span>Frontend Repo</span>
+                  </a>
+                </div>
+              )}
+
+              {/* Pilihan Backend */}
+              {project.githubUrlBackend && (
+                <div className="py-1">
+                  <a
+                    href={project.githubUrlBackend}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex items-center gap-2.5 px-4 py-2.5 text-sm text-zinc-300 hover:bg-zinc-800 hover:text-white transition-colors"
+                  >
+                    <Server className="w-3.5 h-3.5 text-zinc-500 group-hover:text-emerald-400 transition-colors" />
+                    <span>Backend Repo</span>
+                  </a>
+                </div>
+              )}
+              
+            </div>
+          )}
+        </div>
+      )}
                             </div>
                         </div>
 

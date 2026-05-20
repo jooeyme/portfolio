@@ -50,7 +50,8 @@ export interface Project {
     solution: string;
     impact: string;
     color: string;
-    githubUrl: string;
+    githubUrlFrontend: string;
+    githubUrlBackend: string;
     // New Case Study Fields
     overview: string;
     scope: { users?: string; endpoints?: string; tables?: string; roles?: string;[key: string]: string | undefined };
@@ -64,7 +65,7 @@ export const PROJECTS: Project[] = [
         id: 1,
         title: "SIMANHUT",
         description: "Sistem web untuk mengelola dan mengarsipkan dokumen secara digital dengan fitur pencarian dokumen yang cepat dan terstruktur.",
-        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop",
+        image: "/images/SIMANEH.png",
         video: null,
         tags: ["React", "JavaScript", "Tailwind", "Node.js", "PostgreSQL", "Elasticsearch", "Docker"],
         category: "Fullstack",
@@ -72,7 +73,8 @@ export const PROJECTS: Project[] = [
         duration: "2024",
         maturity: "16+",
         color: "#0ea5e9",
-        githubUrl: "https://github.com",
+        githubUrlFrontend: "https://github.com/jooeyme/frontend-arsip.git",
+        githubUrlBackend: "https://github.com/jooeyme/backend-arsip.git",
         features: ["Real-time Analytics", "Dark Mode", "Role-based Auth"],
         problem: "Pencarian dokumen menggunakan query database biasa menjadi lambat ketika jumlah arsip semakin banyak.",
         solution: "Mengintegrasikan Elasticsearch untuk melakukan indexing dokumen sehingga pencarian dapat dilakukan menggunakan full-text search dan advanced filtering.",
@@ -97,7 +99,7 @@ export const PROJECTS: Project[] = [
         id: 2,
         title: "Sistem Reservasi Fasilitas",
         description: "Sistem reservasi fasilitas yang memungkinkan mahasiswa memesan ruang atau fasilitas kampus dengan alur persetujuan administrator.",
-        image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=2574&auto=format&fit=crop",
+        image: "/images/SIMASHUT.png",
         video: null,
         tags: ["React", "JavaScript", "Tailwind", "Node.js", "PostgreSQL", "Socket.io"],
         category: "Frontend",
@@ -105,7 +107,8 @@ export const PROJECTS: Project[] = [
         duration: "2023",
         maturity: "13+",
         color: "#8b5cf6",
-        githubUrl: "https://github.com",
+        githubUrlFrontend: "https://github.com/jooeyme/Frontend-RESERVASI.git",
+        githubUrlBackend: "https://github.com/jooeyme/Backend-RESERVASI.git",
         features: ["Live Chat", "Code Syntax Highlighting", "Job Board"],
         problem: "Proses peminjaman fasilitas dilakukan secara manual sehingga sering terjadi konflik jadwal dan sulit memantau status peminjaman.",
         solution: "Membangun sistem reservasi dengan RESTful API, autentikasi JWT, dan role-based access control untuk mengelola hak akses mahasiswa dan administrator.",
@@ -129,7 +132,7 @@ export const PROJECTS: Project[] = [
         id: 3,
         title: "JobHunter",
         description: "Aplikasi web untuk membantu pengguna melacak berbagai lamaran pekerjaan serta memantau status proses rekrutmen.",
-        image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=2565&auto=format&fit=crop",
+        image: "/images/Jobhunter.png",
         video: null,
         tags: ["React", "Node.js", "PostgreSQL", "Tailwind", "Docker"],
         category: "AI/ML",
@@ -137,7 +140,8 @@ export const PROJECTS: Project[] = [
         duration: "2024",
         maturity: "18+",
         color: "#f43f5e",
-        githubUrl: "https://github.com",
+        githubUrlFrontend: "https://github.com/syifaulqolbii/JobHunter-Frontend.git",
+        githubUrlBackend: "https://github.com/syifaulqolbii/JobHunter-Backend.git",
         features: ["Text-to-Image", "Image Editing", "Gallery"],
         problem: "Pencari kerja sering kesulitan mengelola banyak lamaran pekerjaan dan melacak tahap rekrutmen yang berbeda.",
         solution: "Menyediakan dashboard untuk mencatat lamaran, memperbarui status proses, serta menyimpan catatan interview.",
@@ -145,7 +149,7 @@ export const PROJECTS: Project[] = [
         overview: "JobHunter is a personal career CRM. It allows job seekers to meticulously track applications across multiple platforms, organize interview notes, and visualize their overall applying funnel through a unified dashboard.",
         scope: { users: "Open Registration", endpoints: "25+", tables: "8" },
         responsibilities: [
-            "Designed and built the entire application end-to-end as a solo project.",
+            "Designed and built the entire application end-to-end as a team project.",
             "Containerized the application using Docker for consistent local development and production deployments.",
             "Created responsive React kanban boards for application stage tracking."
         ],
