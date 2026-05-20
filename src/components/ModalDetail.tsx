@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, ExternalLink, Monitor, ChevronDown, Github, Database, Users, Shield, Server, Terminal, Settings } from 'lucide-react';
+import { X, Monitor, ChevronDown, Github, Database, Users, Shield, Server, Terminal, Settings } from 'lucide-react';
 import Image from 'next/image';
 import { Project } from '@/data/portfolioData';
 
