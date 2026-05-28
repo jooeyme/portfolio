@@ -19,9 +19,9 @@ export const PROFILE: Profile = {
     title: "Fullstack Web Developer",
     description: "Building scalable web applications with a focus on seamless user experiences. Specializing in React, Node.js, and Cloud Infrastructure.",
     socials: {
-        github: "https://github.com",
-        linkedin: "https://linkedin.com",
-        email: "mailto:alex@example.com"
+        github: "https://github.com/jooeyme",
+        linkedin: "https://www.linkedin.com/in/mtejo25/",
+        email: "mailto:mtejo25@example.com"
     }
 };
 
@@ -222,7 +222,7 @@ export const CONTACT_DATA = {
             id: 'linkedin',
             title: 'LinkedIn',
             description: 'Professional network',
-            value: 'https://linkedin.com/in/alexdev',
+            value: 'https://linkedin.com/in/mtejo25',
             icon: SiLinkedin,
             type: 'link'
         },
@@ -230,7 +230,7 @@ export const CONTACT_DATA = {
             id: 'github',
             title: 'GitHub',
             description: 'Open source contributions',
-            value: 'https://github.com/alexdev',
+            value: 'https://github.com/jooeyme',
             icon: SiGithub,
             type: 'link'
         }
